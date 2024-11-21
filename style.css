@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+    --color-primary: hsl(239, 50%, 90%);
+    --color-secondary: hsl(239, 50%, 10%);
+    --color-tertiary: hsl(299, 80%, 20%);
+    --color-accent: hsl(179, 80%, 20%);
+    --default-width: 1200px;
+}
+
+.dark {
+    --color-primary: hsl(239, 50%, 10%);
+    --color-secondary: hsl(239, 50%, 90%);
+    --color-tertiary: hsl(299, 80%, 80%);
+    --color-accent: hsl(179, 80%, 80%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-secondary);
+}
+
+body {
+    background-color: var(--color-primary);
+    
+
+}
+
+#startPage {
+    position: relative;
+    min-height: 100dvh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
