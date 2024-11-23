@@ -46,7 +46,7 @@
                 </p>
             </div>
 
-            <div class="icons-container changing-width absolute right-0 [&>a>img]:w-[2.7rem] ">
+            <div class="icons-container changing-width absolute right-0 [&>a>img]:w-[2.5rem] [&>a>]:z-10  ">
                 <a href="https://www.w3.org/html/" target="_blank" title="HTML">
                     <img src="/assets/icons/html.png" alt="HTML Icon" />
                 </a>
@@ -73,21 +73,119 @@
 
             <a href="#worksPage" class="absolute bottom-4 text-4xl"><i
                     class='bx bx-mouse-alt animate-move-up-down'></i></a>
-
-
-
-
-
-
-
         </section>
-        <section id="worksPage" class="h-dvh snap-start ">
+
+
+
+        <section id="worksPage" class="h-dvh snap-start flex flex-col justify-between gap-9 pb-14">
+            <div class="title-container flex items-center gap-8">
+                <h1 class="text-3xl font-bold">Featured Projects</h1>
+                <hr class="flex-1">
+            </div>
+            <div id="projectsCotnainer" class="flex gap-8 items-center mt-[50px]">
+                <div class="proj-card relative h-[325px]  flex-1 border-4 border-[#1F1F33] cursor-pointer">
+                    <div class="video-container absolute h-full w-full opacity-0 delay-">
+                        <video src="./Assets/projects/dk.mkv" class="w-full h-full top-0 left-0 object-fill"></video>
+                    </div>
+                    <div class="project-details-container relative w-full h-full overflow-hidden">
+
+
+                        <p class="proj-details absolute w-full bottom-6 text-center p-2">An online grocery platform with
+                            a
+                            dynamic admin interface for easy management.
+                        </p>
+                    </div>
+                    <span
+                        class="proj-name absolute text-[1.1rem] font-semibold bottom-[-22px] left-1/2 -translate-x-1/2 z-20 bg-[#1F1F33] px-5 py-2 rounded-full whitespace-nowrap">
+                        Digital kirana
+                    </span>
+
+                </div>
+                <div class="proj-card relative h-[325px]  flex-1 border-4 border-[#1F1F33] cursor-pointer">
+                    <div class="video-container absolute h-full w-full opacity-0 delay-">
+                        <video src="./Assets/projects/ims.mkv" class="w-full h-full top-0 left-0 object-fill"></video>
+                    </div>
+                    <div class="project-details-container relative w-full h-full overflow-hidden">
+
+
+                        <p class="proj-details absolute w-full bottom-6 text-center">An inventory management system for
+                            a plywood business to track stock and generate reports.
+                        </p>
+                    </div>
+                    <span
+                        class="proj-name absolute text-[1.1rem] font-semibold bottom-[-22px] left-1/2 -translate-x-1/2 z-20 bg-[#1F1F33] px-5 py-2 rounded-full whitespace-nowrap">
+                        IMS
+                    </span>
+
+                </div>
+                <div class="proj-card relative h-[325px]  flex-1 border-4 border-[#1F1F33] cursor-pointer">
+                    <div class="video-container absolute h-full w-full opacity-0 delay-">
+                        <video src="./Assets/projects/movie.mkv" class="w-full h-full top-0 left-0 object-fill"></video>
+                    </div>
+                    <div class="project-details-container relative w-full h-full overflow-hidden">
+
+
+                        <p class="proj-details absolute w-full bottom-6 text-center">MoviesT lets you search and explore
+                            details of movies, TV shows, anime, and more.
+                        </p>
+                    </div>
+                    <span
+                        class="proj-name absolute text-[1.1rem] font-semibold bottom-[-22px] left-1/2 -translate-x-1/2 z-20 bg-[#1F1F33] px-5 py-2 rounded-full whitespace-nowrap">
+                        MoviesT
+                    </span>
+
+                </div>
+
+
+            </div>
+
+            <div class="btn-container text-center">
+                <button class="mt-20 text-[1.2rem] font-bold border px-5 py-1 rounded-sm">More Projects</button>
+            </div>
+
+
 
         </section>
         <section id="aboutPage" class="h-dvh snap-start">
 
         </section>
     </main>
+
+    <script>
+        const projectCards = document.querySelectorAll('.proj-card');
+
+        projectCards.forEach((card) => {
+            const videoContainer = card.querySelector('.video-container');
+            const video = videoContainer.querySelector('video');
+            const projectDetailsContainer = card.querySelector('.project-details-container');
+            const allProjectDetailsContainers = document.querySelectorAll('.project-details-container');
+
+            card.addEventListener('mouseenter', () => {
+                video.muted = true;
+                videoContainer.style.opacity = '1';
+                video.play();
+                allProjectDetailsContainers.forEach((container) => {
+                    if (container !== projectDetailsContainer) {
+                        container.style.display = 'none';
+                    }
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+                videoContainer.style.opacity = '0';
+                allProjectDetailsContainers.forEach((container) => {
+                    container.style.display = 'block';
+                });
+            });
+        });
+
+
+
+
+
+    </script>
 
 </body>
 
